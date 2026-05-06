@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de Préstamos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#0f766e">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💰 Calculadora de Préstamos Emilse Fandiño</h1>
+
+    <label>Monto del préstamo</label>
+    <input type="text" id="monto" placeholder="Ej: 1.000.000" oninput="formatearMonto(this)">
+    <input type="text" id="interes" placeholder="Ej: 3%" oninput="formatearInteres(this)">
+
+    <label>Número de cuotas</label>
+    <input type="number" id="cuotas" placeholder="Ej: 12">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
